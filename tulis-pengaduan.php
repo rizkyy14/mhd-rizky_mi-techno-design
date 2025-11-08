@@ -113,7 +113,7 @@
                 <h4 class="font-alt" style="margin-top: 3rem">Preview Gambar</h4>
                 <hr />
                 <div class="work-item">
-                  <img src="assets/images/post-1.jpg" id="imagePreview" alt="Blog-post Thumbnail" />
+                  <img src="" id="imagePreview" alt="Blog-post Thumbnail" />
                 </div>
               </div>
             </div>
