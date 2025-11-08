@@ -1,3 +1,19 @@
+<?php
+include 'koneksi.php';
+
+// Ambil nama divisi dari URL, kalau nggak ada pakai default kosong
+$namaDivisi = isset($_GET['nama']) ? urldecode($_GET['nama']) : '';
+$namaDivisiEsc = mysqli_real_escape_string($koneksi, $namaDivisi);
+
+// Query anggota & progja divisi ini
+$queryAnggota = mysqli_query($koneksi, "SELECT * FROM anggota WHERE divisi='$namaDivisiEsc' ORDER BY id_anggota ASC");
+$queryProgja  = mysqli_query($koneksi, "SELECT * FROM progja WHERE nama_divisi='$namaDivisiEsc' ORDER BY id_progja ASC");
+
+// Ambil info divisi untuk header (logo, nama)
+$queryInfoDivisi = mysqli_query($koneksi, "SELECT * FROM divisi WHERE nama_divisi='$namaDivisiEsc'");
+$infoDivisi = mysqli_fetch_assoc($queryInfoDivisi);
+?>
+
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr" style="scroll-behavior: smooth">
   <head>
@@ -67,11 +83,13 @@
               <li class="dropdown">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">Divisi</a>
                 <ul class="dropdown-menu">
-                  <li><a href="#about" class="section-scroll">Internal</a></li>
-                  <li><a href="#dokumentasi" class="section-scroll">Eksternal</a></li>
-                  <li><a href="#divisi" class="section-scroll">Iptek</a></li>
-                  <li><a href="#anggota" class="section-scroll">PSDM</a></li>
-                  <li><a href="#progja" class="section-scroll">B. Development</a></li>
+                  <?php
+                        $allDivisi = mysqli_query($koneksi, "SELECT * FROM divisi ORDER BY nama_divisi ASC");
+                        while ($d = mysqli_fetch_assoc($allDivisi)) {
+                            $namaLink = urlencode($d['nama_divisi']);
+                            echo '<li><a href="divisi.php?nama='.$namaLink.'">'.$d['nama_divisi'].'</a></li>';
+                        }
+                        ?>
                 </ul>
               </li>
               <li class="nav-item"><a href="index.html">Back</a></li>
@@ -92,10 +110,14 @@
         </div>
         <div class="titan-caption">
           <div class="caption-content">
-            <div class="font-alt mb-10 titan-title-size-1">Kabinet Evolutionnaire</div>
-            <div class="font-alt titan-title-size-4">HMPS</div>
-            <div class="font-alt mb-10 titan-title-size-3">Manajemen Informatika</div>
-            <div class="font-alt mb-30 titan-title-size-1">2024/2025</div>
+            <?php if ($infoDivisi): ?>
+                    <div class="font-alt mb-10 titan-title-size-4"><?= htmlspecialchars($infoDivisi['nama_divisi']) ?></div>
+                    <div class="module-icon">
+                        <img src="logo_divisi/<?= $infoDivisi['logo_divisi'] ?>" alt="Logo Divisi" style="height:150px;">
+                    </div>
+                <?php else: ?>
+                    <div class="font-alt mb-10 titan-title-size-1">Divisi Tidak Ditemukan</div>
+                <?php endif; ?>
           </div>
         </div>
       </section>
@@ -111,24 +133,10 @@
 
          <div class="testimonials-slider pt-100 pb-140">
   <ul class="slides">
-    <?php
-    include 'koneksi.php';
-    $queryAnggota = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY nama_anggota DESC");
-    while($anggota = mysqli_fetch_array($queryAnggota)){ 
-        $idDivisi = $anggota['divisi'];
-        $queryDivisi = mysqli_query($koneksi, "SELECT logo_divisi FROM divisi WHERE nama_divisi='$idDivisi'");
-        $divisi = mysqli_fetch_array($queryDivisi);
-    ?>
+    <?php while ($anggota = mysqli_fetch_assoc($queryAnggota)): ?>
     <li>
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12 text-center">
-            <!-- Logo divisi -->
-            <div class="module-icon">
-              <img src="logo_divisi/<?= $divisi['logo_divisi'] ?>"  alt="Logo Divisi" style="height:150px;">
-            </div>
-          </div>
-        </div>
+        
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2 text-center">
             <blockquote class="testimonial-text font-alt">
@@ -143,225 +151,60 @@
             <div class="testimonial-author">
               <div class="testimonial-caption font-alt">
                 <div class="testimonial-title"><?= $anggota['nama_anggota'] ?></div>
-                <div class="testimonial-descr"><?= $anggota['jabatan'] ?></div>
+                <div class="testimonial-title"><?= $anggota['jabatan'] ?></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </li>
-    <?php } ?>
+    <?php endwhile; ?>
   </ul>
 </div>
 
+<section class="module" id="menu">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2 class="module-title font-alt">Program Kerja</h2>
+      </div>
+    </div>
 
+    <?php
+    // Hanya tampilkan program kerja untuk divisi yang dipilih ($namaDivisiEsc)
+    if (!empty($namaDivisiEsc)) {
+        $queryProgja = mysqli_query($koneksi, "
+          SELECT * FROM progja 
+          WHERE TRIM(LOWER(nama_divisi)) = LOWER('$namaDivisiEsc')
+          ORDER BY id_progja ASC
+        ");
 
-
-
-        <!-- <div class="testimonials-slider pt-100 pb-140">
-              <ul class="slides">
-                <li>
-                  <div class="container">
+        if (mysqli_num_rows($queryProgja) > 0) {
+            echo '<div class="row multi-columns-row">';
+            while ($progja = mysqli_fetch_assoc($queryProgja)) {
+                echo '
+                <div class="col-sm-6">
+                  <div class="menu">
                     <div class="row">
                       <div class="col-sm-12">
-                        <div class="module-icon"><span class="icon-quote"></span></div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-8 col-sm-offset-2">
-                        <blockquote class="testimonial-text font-alt">Berkembang bersama MI, menjadi yang terbaik</blockquote>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-4 col-sm-offset-4">
-                        <div class="testimonial-author">
-                          <div class="testimonial-caption font-alt">
-                            <div class="testimonial-title">HMPS MI</div>
-                            <div class="testimonial-descr">2024/2025</div>
-                          </div>
-                        </div>
+                        <h4 class="menu-title font-alt">' . htmlspecialchars($progja['nama_progja']) . '</h4>
                       </div>
                     </div>
                   </div>
-                </li>
-                <li>
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="module-icon"><span class="icon-quote"></span></div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-8 col-sm-offset-2">
-                        <blockquote class="testimonial-text font-alt">Kabinet Evolutionnaire</blockquote>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-4 col-sm-offset-4">
-                        <div class="testimonial-author">
-                          <div class="testimonial-caption font-alt">
-                            <div class="testimonial-title">HMPS MI</div>
-                            <div class="testimonial-descr">2024/2025</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="module-icon"><span class="icon-quote"></span></div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-8 col-sm-offset-2">
-                        <blockquote class="testimonial-text font-alt">Inovasi Tanpa Batas</blockquote>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-4 col-sm-offset-4">
-                        <div class="testimonial-author">
-                          <div class="testimonial-caption font-alt">
-                            <div class="testimonial-title">HMPS MI</div>
-                            <div class="testimonial-descr">2024/2025</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div> -->
+                </div>';
+            }
+            echo '</div>';
+        } else {
+            echo '<p class="font-alt">Tidak ada program kerja untuk divisi ini.</p>';
+        }
+    }
+    ?>
+  </div>
+</section>
 
-        <section class="module" id="menu">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <h2 class="module-title font-alt">Program Kerja</h2>
-              </div>
-            </div>
-            <div class="row multi-columns-row">
-              <div class="col-sm-6">
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <a href="">
-                        <h4 class="menu-title font-alt">Wild Mushroom Bucatini with Kale</h4>
-                        <div class="menu-detail font-serif">Mushroom / Veggie / White Sources</div>
-                      </a>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$10.5</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h4 class="menu-title font-alt">Lemon and Garlic Green Beans</h4>
-                      <div class="menu-detail font-serif">Lemon / Garlic / Beans</div>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$14.5</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h4 class="menu-title font-alt">LambBeef Kofka Skewers with Tzatziki</h4>
-                      <div class="menu-detail font-serif">Lamb / Wine / Butter</div>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$18.5</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h4 class="menu-title font-alt">Imported Oysters Grill (5 Pieces)</h4>
-                      <div class="menu-detail font-serif">Oysters / Veggie / Ginger</div>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$15.9</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h4 class="menu-title font-alt">Meatloaf with Black Pepper-Honey BBQ</h4>
-                      <div class="menu-detail font-serif">Pepper / Chicken / Honey</div>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$16.4</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h4 class="menu-title font-alt">Wild Mushroom Bucatini with Kale</h4>
-                      <div class="menu-detail font-serif">Mushroom / Veggie / White Sources</div>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$10.5</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h4 class="menu-title font-alt">Lemon and Garlic Green Beans</h4>
-                      <div class="menu-detail font-serif">Lemon / Garlic / Beans</div>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$14.5</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h4 class="menu-title font-alt">LambBeef Kofka Skewers with Tzatziki</h4>
-                      <div class="menu-detail font-serif">Lamb / Wine / Butter</div>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$18.5</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h4 class="menu-title font-alt">Imported Oysters Grill (5 Pieces)</h4>
-                      <div class="menu-detail font-serif">Oysters / Veggie / Ginger</div>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$15.9</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="menu">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h4 class="menu-title font-alt">Meatloaf with Black Pepper-Honey BBQ</h4>
-                      <div class="menu-detail font-serif">Pepper / Chicken / Honey</div>
-                    </div>
-                    <div class="col-sm-4 menu-price-detail">
-                      <h4 class="menu-price font-alt">$16.4</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+
+          
         <div class="module-small bg-dark" id="bawah">
           <div class="container-fluid">
             <div class="row">
