@@ -1,3 +1,9 @@
+<?php
+include '../koneksi.php';
+
+// Ambil data divisi dari tabel divisi
+$divisi = mysqli_query($koneksi, "SELECT nama_divisi FROM divisi ORDER BY nama_divisi ASC");
+?>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
   <head>
@@ -63,17 +69,16 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="nav-item"><a href="../admin-page.php">Home</a></li>
               <li class="nav-item"><a href="tulis-pengaduan.php">Input Profil</a></li>
-              <li class="nav-item"><a href="tambah-anggota.php">Input Data Anggota</a></li>
             </ul>
           </div>
         </div>
       </nav>
-      <div class="main" >
+      <div class="main">
         <section class="module bg-dark-60 contact-page-header bg-dark" data-background="../assets/images/contact_bg.jpg">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">INPUT DIVISI</h2>
+                <h2 class="module-title font-alt">INPUT ANGGOTA</h2>
                 <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
               </div>
             </div>
@@ -85,41 +90,49 @@
               <div class="col-sm-8">
                 <h4 class="font-alt">Form Pengisian Data Divisi</h4>
                 <br />
-                <form method="post" action="proses-tambah-divisi.php" enctype="multipart/form-data">
-  <!-- Nama Divisi -->
-  <div class="form-group">
-    <label for="nama_divisi">Nama Divisi</label>
-    <input class="form-control" type="text" id="nama_divisi" name="nama_divisi" placeholder="Masukkan nama divisi" required />
-  </div>
+                <form method="post" action="proses-tambah-anggota.php" enctype="multipart/form-data">
+ 
+                  <div class="form-group">
+                    <label>Divisi</label>
+                    <select class="form-control" name="divisi" required>
+                      <option value="">-- Pilih Divisi --</option>
+                      <?php while ($d = mysqli_fetch_assoc($divisi)): ?>
+                      <option value="<?= htmlspecialchars($d['nama_divisi']) ?>">
+                        <?= htmlspecialchars($d['nama_divisi']) ?>
+                      </option>
+                      <?php endwhile; ?>
+                    </select>
+                  </div>
 
-  <!-- Jumlah Anggota -->
-  <div class="form-group">
-    <label for="jumlah_anggota">Jumlah Anggota</label>
-    <input class="form-control" type="number" id="jumlah_anggota" name="jumlah_anggota" placeholder="Masukkan jumlah anggota" required />
-  </div>
 
-  <!-- Program Kerja -->
-  <div class="form-group">
-    <label>Program Kerja</label>
-    <div id="progja-wrapper">
-      <input class="form-control" style="margin-bottom : 5px; text-transform:none; " type="text" name="progja[]" placeholder="Masukkan program kerja" required />
-    </div>
-    <button type="button" class="btn btn-sm btn-success" onclick="tambahProgja()">+ Tambah Progja</button>
-    <button type="button" class="btn btn-sm btn-danger" onclick="hapusProgja()">- Hapus Progja</button>
-  </div>
 
-  <!-- Upload Logo -->
-  <div class="form-group" style="margin-bottom: 2.5rem">
-    <label for="fileInput">Logo Divisi</label>
-    <input type="file" id="fileInput" class="form-control" name="logo_divisi" accept="image/*" required />
-  </div>
 
-  <!-- Submit -->
-  <div class="text-center">
-    <button class="btn btn-block btn-round btn-d" type="submit">Submit</button>
-  </div>
-</form>
+                  <div id="anggota-wrapper">
+                    <div class="anggota-item row" style="margin-bottom: 10px">
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" name="nama_anggota[]" placeholder="Nama Anggota" style="text-transform:none;" required />
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" name="jabatan[]" placeholder="Jabatan" style="text-transform:none;" required />
+                      </div>
+                    </div>
+                  </div>
 
+                  <button type="button" class="btn btn-success btn-sm" onclick="tambahAnggota()">+ Tambah Anggota</button>
+                  <button type="button" class="btn btn-danger btn-sm" onclick="hapusAnggota()">- Hapus Anggota</button>
+
+                  <hr />
+
+                  <!-- Upload Foto Multiple -->
+                  <div class="form-group">
+                    <label>Upload Foto Anggota</label>
+                    <input type="file" class="form-control" name="foto_anggota[]" id="fileInput" accept="image/*" multiple required />
+                  </div>
+
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-round">Simpan</button>
+                  </div>
+                </form>
               </div>
               <div class="col-sm-4">
                 <h4 class="font-alt" style="margin-top: 3rem">Preview Gambar</h4>
@@ -136,7 +149,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <div class="widget">
-                  <img src="../assets/images/logo mi putih.png"  alt="" /><br />
+                  <img src="../assets/images/logo mi putih.png" alt="" /><br />
                   <h1 class="font-alt">HMPS MANAJEMEN INFORMATIKA</h1>
                   <h4>Jalan Almamater No. 1, Kampus USU Padang Bulan, Medan, Sumatera Utara - 20155</h4>
                 </div>
@@ -191,23 +204,28 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/showimage.js"></script>
     <script>
-function tambahProgja() {
-  const wrapper = document.getElementById('progja-wrapper');
-  const input = document.createElement('input');
-  input.className = 'form-control mb-2';
-  input.type = 'text';
-  input.name = 'progja[]';
-  input.placeholder = 'Masukkan program kerja';
-  input.style = 'margin-bottom: 5px; text-transform:none';
-  wrapper.appendChild(input);
-}
-
-function hapusProgja() {
-  const wrapper = document.getElementById('progja-wrapper');
-  if (wrapper.children.length > 1) {
-    wrapper.removeChild(wrapper.lastElementChild);
+  function tambahAnggota() {
+    const wrapper = document.getElementById('anggota-wrapper');
+    const div = document.createElement('div');
+    div.className = 'anggota-item row';
+    div.style.marginBottom = '10px';
+    div.innerHTML = `
+      <div class="col-md-6">
+        <input type="text" class="form-control" name="nama_anggota[]" placeholder="Nama Anggota" style="text-transform:none;" required>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" name="jabatan[]" placeholder="Jabatan" style="text-transform:none;" required>
+      </div>`;
+    wrapper.appendChild(div);
   }
-}
+
+  function hapusAnggota() {
+    const wrapper = document.getElementById('anggota-wrapper');
+    if (wrapper.children.length > 1) {
+      wrapper.removeChild(wrapper.lastElementChild);
+    }
+  }
 </script>
+
   </body>
 </html>

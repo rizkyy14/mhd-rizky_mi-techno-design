@@ -64,18 +64,8 @@
           <!-- MENU -->
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
-                  <li><a href="#dokumentasi" class="section-scroll">Dokumentasi Kegiatan</a></li>
-                  <li><a href="divisi.html" target="_blank" class="section-scroll">Divisi</a></li>
-                  <li><a href="#anggota" class="section-scroll">Anggota</a></li>
-                  <li><a href="#progja" class="section-scroll">Program Kerja</a></li>
-                  <li><a href="#kontak" class="section-scroll">Kontak</a></li>
-                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
-                </ul>
-              </li>
+
+              <li class="nav-item"><a href="admin/tambah-divisi.php" target="_blank">Data Divisi</a></li>
               <li class="nav-item"><a href="admin/pengaduan.php" target="_blank">Pengaduan</a></li>
               <li class="nav-item"><a href="aksi_logout.php">Logout</a></li>
             </ul>

@@ -69,7 +69,7 @@
                 <ul class="dropdown-menu">
                   <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
                   <li><a href="#dokumentasi" class="section-scroll">Dokumentasi Kegiatan</a></li>
-                  <li><a href="divisi.html" target="_blank" class="section-scroll">Divisi</a></li>
+                  <li><a href="divisi.php" target="_blank" class="section-scroll">Divisi</a></li>
                   <li><a href="#anggota" class="section-scroll">Anggota</a></li>
                   <li><a href="#progja" class="section-scroll">Program Kerja</a></li>
                   <li><a href="#kontak" class="section-scroll">Kontak</a></li>

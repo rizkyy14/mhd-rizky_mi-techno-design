@@ -107,144 +107,133 @@
               <h2 class="module-title font-alt">Our Solved Cases</h2>
             </div>
           </div>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="owl-carousel text-center" data-items="2" data-pagination="false" data-navigation="false">
-                <div class="owl-item">
-                  <div class="work-item">
-                    <div class="work-image"><img src="assets/images/finance/case1.jpg" alt="Portfolio Item" /></div>
-                    <div class="work-caption font-alt">
-                      <h3 class="work-title">Corporate Identity</h3>
-                      <div class="work-descr">Illustration</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="owl-item">
-                  <div class="work-item">
-                    <div class="work-image"><img src="assets/images/finance/case2.jpg" alt="Portfolio Item" /></div>
-                    <div class="work-caption font-alt">
-                      <h3 class="work-title">Bag MockUp</h3>
-                      <div class="work-descr">Marketing</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="owl-item">
-                  <div class="work-item">
-                    <div class="work-image"><img src="assets/images/finance/case3.jpg" alt="Portfolio Item" /></div>
-                    <div class="work-caption font-alt">
-                      <h3 class="work-title">Disk Cover</h3>
-                      <div class="work-descr">Illustration</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="owl-item">
-                  <div class="work-item">
-                    <div class="work-image"><img src="assets/images/finance/case4.jpg" alt="Portfolio Item" /></div>
-                    <div class="work-caption font-alt">
-                      <h3 class="work-title">Corporate Identity</h3>
-                      <div class="work-descr">Illustration</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="owl-item">
-                  <div class="work-item">
-                    <div class="work-image"><img src="assets/images/finance/case5.jpg" alt="Portfolio Item" /></div>
-                    <div class="work-caption font-alt">
-                      <h3 class="work-title">Bag MockUp</h3>
-                      <div class="work-descr">Marketing</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="owl-item">
-                  <div class="work-item">
-                    <div class="work-image"><img src="assets/images/finance/case6.jpg" alt="Portfolio Item" /></div>
-                    <div class="work-caption font-alt">
-                      <h3 class="work-title">Disk Cover</h3>
-                      <div class="work-descr">Illustration</div>
-                    </div>
-                  </div>
-                </div>
+        </section>
+
+         <div class="testimonials-slider pt-100 pb-140">
+  <ul class="slides">
+    <?php
+    include 'koneksi.php';
+    $queryAnggota = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY nama_anggota DESC");
+    while($anggota = mysqli_fetch_array($queryAnggota)){ 
+        $idDivisi = $anggota['divisi'];
+        $queryDivisi = mysqli_query($koneksi, "SELECT logo_divisi FROM divisi WHERE nama_divisi='$idDivisi'");
+        $divisi = mysqli_fetch_array($queryDivisi);
+    ?>
+    <li>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <!-- Logo divisi -->
+            <div class="module-icon">
+              <img src="logo_divisi/<?= $divisi['logo_divisi'] ?>"  alt="Logo Divisi" style="height:150px;">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <blockquote class="testimonial-text font-alt">
+              <img src="foto_anggota/<?= $anggota['foto_anggota'] ?>" 
+                   alt="<?= $anggota['nama_anggota'] ?>" 
+                   class="img-fluid" style="max-height:500px; border-radius:10px;" />
+            </blockquote>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-sm-4 col-sm-offset-4 text-center">
+            <div class="testimonial-author">
+              <div class="testimonial-caption font-alt">
+                <div class="testimonial-title"><?= $anggota['nama_anggota'] ?></div>
+                <div class="testimonial-descr"><?= $anggota['jabatan'] ?></div>
               </div>
             </div>
           </div>
-        </section>
-
-        <div class="testimonials-slider pt-100 pb-140">
-          <ul class="slides">
-            <li>
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="module-icon"><span class="icon-quote"></span></div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-8 col-sm-offset-2">
-                    <blockquote class="testimonial-text font-alt">Berkembang bersama MI, menjadi yang terbaik</blockquote>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4 col-sm-offset-4">
-                    <div class="testimonial-author">
-                      <div class="testimonial-caption font-alt">
-                        <div class="testimonial-title">HMPS MI</div>
-                        <div class="testimonial-descr">2024/2025</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="module-icon"><span class="icon-quote"></span></div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-8 col-sm-offset-2">
-                    <blockquote class="testimonial-text font-alt">Kabinet Evolutionnaire</blockquote>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4 col-sm-offset-4">
-                    <div class="testimonial-author">
-                      <div class="testimonial-caption font-alt">
-                        <div class="testimonial-title">HMPS MI</div>
-                        <div class="testimonial-descr">2024/2025</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="module-icon"><span class="icon-quote"></span></div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-8 col-sm-offset-2">
-                    <blockquote class="testimonial-text font-alt">Inovasi Tanpa Batas</blockquote>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4 col-sm-offset-4">
-                    <div class="testimonial-author">
-                      <div class="testimonial-caption font-alt">
-                        <div class="testimonial-title">HMPS MI</div>
-                        <div class="testimonial-descr">2024/2025</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
         </div>
+      </div>
+    </li>
+    <?php } ?>
+  </ul>
+</div>
+
+
+
+
+
+        <!-- <div class="testimonials-slider pt-100 pb-140">
+              <ul class="slides">
+                <li>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="module-icon"><span class="icon-quote"></span></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-8 col-sm-offset-2">
+                        <blockquote class="testimonial-text font-alt">Berkembang bersama MI, menjadi yang terbaik</blockquote>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 col-sm-offset-4">
+                        <div class="testimonial-author">
+                          <div class="testimonial-caption font-alt">
+                            <div class="testimonial-title">HMPS MI</div>
+                            <div class="testimonial-descr">2024/2025</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="module-icon"><span class="icon-quote"></span></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-8 col-sm-offset-2">
+                        <blockquote class="testimonial-text font-alt">Kabinet Evolutionnaire</blockquote>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 col-sm-offset-4">
+                        <div class="testimonial-author">
+                          <div class="testimonial-caption font-alt">
+                            <div class="testimonial-title">HMPS MI</div>
+                            <div class="testimonial-descr">2024/2025</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="module-icon"><span class="icon-quote"></span></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-8 col-sm-offset-2">
+                        <blockquote class="testimonial-text font-alt">Inovasi Tanpa Batas</blockquote>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 col-sm-offset-4">
+                        <div class="testimonial-author">
+                          <div class="testimonial-caption font-alt">
+                            <div class="testimonial-title">HMPS MI</div>
+                            <div class="testimonial-descr">2024/2025</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div> -->
 
         <section class="module" id="menu">
           <div class="container">
