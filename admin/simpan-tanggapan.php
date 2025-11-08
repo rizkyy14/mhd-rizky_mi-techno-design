@@ -1,0 +1,27 @@
+<?php
+include '../koneksi.php';
+$id_pengaduan=$_POST['id_pengaduan'];
+$tgl = $_POST['tgl_tanggapan'];
+$tanggapan=$_POST['tanggapan'];
+
+$st='selesai';
+//memanggil database
+$sql=("insert into tanggapan(id_pengaduan,tgl_tanggapan,tanggapan ) values('$id_pengaduan','$tgl','$tanggapan')");
+$data=("update pengaduan set status='$st' where id_pengaduan='$id_pengaduan' ");
+
+$cek=($sql);
+ if($cek)
+
+ 	 $data=mysqli_query($koneksi, $sql);
+        $userData=($data);
+  if($sql)
+{
+	?>
+	<script type="text/javascript">
+		alert('data sudah ditanggapi');
+		window.location="pengaduan.php";
+	</script>
+	<?php 
+}
+
+?>
