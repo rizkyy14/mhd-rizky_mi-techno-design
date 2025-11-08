@@ -106,8 +106,8 @@
   margin-top: 0 !important;
 }
 
-.owl-stage {
-  height: auto;
+.owl-stage-outer {
+  height: 950px;
 }
 
 .sliding-portfolio {
@@ -119,10 +119,16 @@
   .alt-services-image {
     margin-top: 10px;
   }
+  .owl-stage-outer {
+    height: 500px;
+  }
 }
-@media (max-width: 1120px) {
+@media (min-width: 1114px) and (max-width: 1120px) {
   .alt-services-image {
     margin-top: 5%;
+  }
+  .owl-stage-outer {
+    height: 700px;
   }
 }
 
@@ -130,6 +136,10 @@
 @media (max-width: 767px) {
   .navbar-custom {
     padding: 10px 0;
+  }
+
+  .owl-stage-outer {
+    height: 300px;
   }
 
   .icon-bar {

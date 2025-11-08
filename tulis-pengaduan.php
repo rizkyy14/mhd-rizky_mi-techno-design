@@ -63,13 +63,12 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="nav-item"><a href="index.php">Home</a></li>
               <li class="nav-item"><a href="tulis-pengaduan.php">Tulis Laporan</a></li>
-              <li class="nav-item"><a href="?url=lihat-pengaduan">Lihat Pengaduan</a></li>
+              <li class="nav-item"><a href="lihat-pengaduan.php">Lihat Pengaduan</a></li>
             </ul>
           </div>
         </div>
       </nav>
       <div class="main" >
-        <?php include 'halaman.php';?>
         <section class="module bg-dark-60 contact-page-header bg-dark" data-background="assets/images/contact_bg.jpg">
           <div class="container">
             <div class="row">
@@ -113,7 +112,7 @@
                 <h4 class="font-alt" style="margin-top: 3rem">Preview Gambar</h4>
                 <hr />
                 <div class="work-item">
-                  <img src="" id="imagePreview" alt="Blog-post Thumbnail" />
+                  <img src="assets/images/post-1.jpg" id="imagePreview" alt="Blog-post Thumbnail" />
                 </div>
               </div>
             </div>

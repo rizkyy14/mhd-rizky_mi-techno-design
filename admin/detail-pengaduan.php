@@ -74,7 +74,6 @@ $data=mysqli_fetch_array($query);
           </div>
         </div>
       </nav>
-      <?php include 'halaman.php'?>
 <div class="main">
         <section class="module bg-dark-60 contact-page-header bg-dark" data-background="assets/images/contact_bg.jpg">
           <div class="container">
@@ -100,7 +99,7 @@ $data=mysqli_fetch_array($query);
                       <span><a href="pengaduan.php"><strong>Kembali</strong></a></span>
                     </li>
                     <li>
-                      <span><a href="?url=tulis-tanggapan&id=<?=$data['id_pengaduan'] ?>" target="_blank"><strong>Tanggapi</strong></a></span>
+                      <span><a href="tulis-tanggapan.php?id=<?=$data['id_pengaduan'] ?>" target="_blank"><strong>Tanggapi</strong></a></span>
                     </li>
                   </ul>
                 </div>
@@ -114,7 +113,7 @@ $data=mysqli_fetch_array($query);
             <div class="row">
               <div class="col-sm-6">
                 <div class="widget">
-                  <img src="assets/images/logo mi putih.png" alt="" /><br />
+                  <img src="../assets/images/logo mi putih.png" alt="" /><br />
                   <h1 class="font-alt">HMPS MANAJEMEN INFORMATIKA</h1>
                   <h4>Jalan Almamater No. 1, Kampus USU Padang Bulan, Medan, Sumatera Utara - 20155</h4>
                 </div>

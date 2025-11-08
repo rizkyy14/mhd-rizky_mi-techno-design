@@ -1,10 +1,3 @@
-<?php
-$id=$_GET['id'];
-include'../koneksi.php';
-$query=mysqli_query($koneksi,"SELECT*FROM pengaduan WHERE id_pengaduan='$id'");
-$data=mysqli_fetch_array($query);
-
-?>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
   <head>
@@ -15,7 +8,7 @@ $data=mysqli_fetch_array($query);
     Document Title
     =============================================
     -->
-    <title>Pengaduan</title>
+    <title>Tambah Divisi</title>
     <!--  
     Favicons
     =============================================
@@ -49,8 +42,8 @@ $data=mysqli_fetch_array($query);
     <link rel="stylesheet" href="../assets/css/nav2.css" />
     <link id="color-scheme" href="../assets/css/colors/default.css" rel="stylesheet" />
   </head>
-  <html data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
-    <body>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
       <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -69,18 +62,17 @@ $data=mysqli_fetch_array($query);
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="nav-item"><a href="../admin-page.php">Home</a></li>
-
+              <li class="nav-item"><a href="tulis-pengaduan.php">Input Profil</a></li>
             </ul>
           </div>
         </div>
       </nav>
-
-<div class="main" >
+      <div class="main" >
         <section class="module bg-dark-60 contact-page-header bg-dark" data-background="../assets/images/contact_bg.jpg">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">TANGGAPAN</h2>
+                <h2 class="module-title font-alt">INPUT DIVISI</h2>
                 <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
               </div>
             </div>
@@ -90,34 +82,73 @@ $data=mysqli_fetch_array($query);
           <div class="container">
             <div class="row">
               <div class="col-sm-8">
-                <h4 class="font-alt">Form Tulis Tanggapan</h4>
+                <h4 class="font-alt">Form Pengisian Data Divisi</h4>
                 <br />
-                <form id="contactForm" role="form" method="post" action="simpan-tanggapan.php">
-                  <div class="form-group">
-                    <label class="" for="name">Id Pengaduan</label>
-                    <input class="form-control" type="text" id="id_pengaduan" name="id_pengaduan" value="<?php echo $_GET['id'];?>" readonly />
-                  </div>
-                  <div class="form-group">
-                    <label class="" for="name">Tanggal Tanggapan</label>
-                    <input class="form-control" type="text" id="nim" name='tgl_tanggapan' value="<?php echo date ('Y-m-d');?>" readonly />
-                  </div>
-                  <div class="form-group">
-                    <label class="" for="judul">Tanggapan</label>
-                    <textarea class="form-control" type="text" id="title" name="tanggapan" placeholder="Masukkan Tanggapan" required="required"  style="height: 150px; text-transform: none; "></textarea>
+                <form method="post" action="proses-tambah-divisi.php" enctype="multipart/form-data">
+  <!-- Nama Divisi -->
+  <div class="form-group">
+    <label for="nama_divisi">Nama Divisi</label>
+    <input class="form-control" type="text" id="nama_divisi" name="nama_divisi" placeholder="Masukkan nama divisi" required />
+  </div>
 
-                    <!-- <div class="form-group">
-                      <label class="" for="name">Id Admin</label>
-                      <input class="form-control" type="text" id="nim" name='id_admin' value="" readonly />
-                    </div> -->
-                  </div>
+  <!-- Jumlah Anggota -->
+  <div class="form-group">
+    <label for="jumlah_anggota">Jumlah Anggota</label>
+    <input class="form-control" type="number" id="jumlah_anggota" name="jumlah_anggota" placeholder="Masukkan jumlah anggota" required />
+  </div>
 
+  <!-- Program Kerja -->
+  <div class="form-group">
+    <label>Program Kerja</label>
+    <div id="progja-wrapper">
+      <input class="form-control" style="margin-bottom : 5px;" type="text" name="progja[]" placeholder="Masukkan program kerja" required />
+    </div>
+    <button type="button" class="btn btn-sm btn-success" onclick="tambahProgja()">+ Tambah Progja</button>
+    <button type="button" class="btn btn-sm btn-danger" onclick="hapusProgja()">- Hapus Progja</button>
+  </div>
+
+  <!-- Upload Logo -->
+  <div class="form-group" style="margin-bottom: 2.5rem">
+    <label for="fileInput">Logo Divisi</label>
+    <input type="file" id="fileInput" class="form-control" name="logo_divisi" accept="image/*" required />
+  </div>
+
+  <!-- Submit -->
+  <div class="text-center">
+    <button class="btn btn-block btn-round btn-d" type="submit">Submit</button>
+  </div>
+</form>
+
+
+                <!-- <form method="post" action="proses-tambah-divisi.php" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label class="" for="name">Nama Divisi</label>
+                    <input class="form-control" type="text" id="nama_divisi" name="nama_divisi"  />
+                  </div>
+                  <div class="form-group">
+                    <label class="" for="name">Jumlah Anggota</label>
+                    <input class="form-control" type="text" id="jumlah_anggota" name="jumlah_anggota" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <label class="" for="judul">Program Kerja</label>
+                    <input class="form-control" type="text"  name="progja" placeholder="Masukkan Laporan" required="required" style="height: 150px; text-transform: none; ">/>
+                  </div>
+                  <div class="form-group" style="margin-bottom: 2.5rem">
+                    <input type="file" id="fileInput" class="form-control" rows="7" name="logo_divisi" required  accept="image/*" />
+                  </div>
                   <div class="text-center">
                     <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">Submit</button>
                   </div>
-                </form>
-                <div class="ajax-response font-alt" id="contactFormResponse"></div>
+                </form> -->
               </div>
-
+              <div class="col-sm-4">
+                <h4 class="font-alt" style="margin-top: 3rem">Preview Gambar</h4>
+                <hr />
+                <div class="work-item">
+                  <img src="../assets/images/post-1.jpg" id="imagePreview" alt="Blog-post Thumbnail" />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -126,7 +157,7 @@ $data=mysqli_fetch_array($query);
             <div class="row">
               <div class="col-sm-6">
                 <div class="widget">
-                  <img src="../assets/images/logo mi putih.png" alt="" /><br />
+                  <img src="../assets/images/logo mi putih.png"  alt="" /><br />
                   <h1 class="font-alt">HMPS MANAJEMEN INFORMATIKA</h1>
                   <h4>Jalan Almamater No. 1, Kampus USU Padang Bulan, Medan, Sumatera Utara - 20155</h4>
                 </div>
@@ -160,19 +191,44 @@ $data=mysqli_fetch_array($query);
       <div class="scroll-up">
         <a href="#totop"><i class="fa fa-angle-double-up"></i></a>
       </div>
-      <script src="assets/lib/jquery/dist/jquery.js"></script>
-    <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/lib/wow/dist/wow.js"></script>
-    <script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
-    <script src="assets/lib/isotope/dist/isotope.pkgd.js"></script>
-    <script src="assets/lib/imagesloaded/imagesloaded.pkgd.js"></script>
-    <script src="assets/lib/flexslider/jquery.flexslider.js"></script>
-    <script src="assets/lib/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script src="assets/lib/smoothscroll.js"></script>
-    <script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    </main>
+    <!--  
+    JavaScripts
+    =============================================
+    -->
+    <script src="../assets/lib/jquery/dist/jquery.js"></script>
+    <script src="../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/lib/wow/dist/wow.js"></script>
+    <script src="../assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="../assets/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="../assets/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="../assets/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="../assets/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../assets/lib/smoothscroll.js"></script>
+    <script src="../assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="../assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
     <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/showimage.js"></script>
+    <script>
+function tambahProgja() {
+  const wrapper = document.getElementById('progja-wrapper');
+  const input = document.createElement('input');
+  input.className = 'form-control mb-2';
+  input.type = 'text';
+  input.name = 'progja';
+  input.placeholder = 'Masukkan program kerja';
+  input.style = 'margin-bottom: 5px';
+  wrapper.appendChild(input);
+}
+
+function hapusProgja() {
+  const wrapper = document.getElementById('progja-wrapper');
+  if (wrapper.children.length > 1) {
+    wrapper.removeChild(wrapper.lastElementChild);
+  }
+}
+</script>
+  </body>
 </html>
