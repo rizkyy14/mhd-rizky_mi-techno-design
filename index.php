@@ -68,10 +68,8 @@
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
                 <ul class="dropdown-menu">
                   <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
-                  <li><a href="#dokumentasi" class="section-scroll">Dokumentasi Kegiatan</a></li>
                   <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
-                  <li><a href="#anggota" class="section-scroll">Anggota</a></li>
-                  <li><a href="#progja" class="section-scroll">Program Kerja</a></li>
+                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
                   <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
                   <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
                 </ul>
@@ -83,15 +81,7 @@
         </div>
       </nav>
 
-      <section class="home-section home-full-height bg-dark-30" id="home" data-background="assets/images/DSC02009.jpg">
-        <div
-          class="video-player"
-          data-property="{videoURL:'https://www.youtube.com/watch?v=bNucJgetMjE', containment:'.home-section', startAt:18, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"
-        ></div>
-        <div class="video-controls-box">
-          <div class="container">
-            <div class="video-controls"><a class="fa fa-volume-up" id="video-volume" href="#">&nbsp;</a><a class="fa fa-pause" id="video-play" href="#">&nbsp;</a></div>
-          </div>
+      <section class="home-section home-full-height bg-dark-30" id="home" data-background="assets/images/IMG_5385.jpg">
         </div>
         <div class="titan-caption">
           <div class="caption-content">
@@ -108,7 +98,6 @@
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
                 <h2 class="module-title font-alt">TENTANG HMPS MI</h2>
-                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
               </div>
             </div>
             <div class="testimonials-slider pt-100 pb-140">
@@ -117,12 +106,13 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-sm-12">
-                        <div class="module-icon"><span class="icon-quote"></span></div>
+                        <h5 class="module-icon">VISI</h5>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-8 col-sm-offset-2">
-                        <blockquote class="testimonial-text font-alt">Berkembang bersama MI, menjadi yang terbaik</blockquote>
+                        <blockquote class="testimonial-text font-alt">Menjadikan HMPS MI sebagai organisasi yang berkomitmen untuk mengembangkan potensi setiap bidang, menciptakan suasana inklusif yang mempererat hubungan antar mahasiswa/ i, memperluas cakupan eksternal melalui bidang non-informatika sebagai bisnis usaha faktor utamanya, serta mengoptimalkan peran mahasiswa/i untuk berkontribusi aktif dalam mencapai tujuan bersama dan prestasi yang membanggakan
+</blockquote>
                       </div>
                     </div>
                     <div class="row">
@@ -141,12 +131,15 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-sm-12">
-                        <div class="module-icon"><span class="icon-quote"></span></div>
+                        <h3 class="module-icon">MISI</h3>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-8 col-sm-offset-2">
-                        <blockquote class="testimonial-text font-alt">Kabinet Evolutionnaire</blockquote>
+                        <blockquote class="testimonial-text font-alt">1. Membangun program-program pengembangan diri bagi mahasiswa/i dalam berbagai bidang, baik di dalam maupun di luar lingkup prodi, sehingga setiap mahasiswa/i memiliki kesempatan untuk memaksimalkan keterampilan, potensi, dan kontribusi mereka guna mencapai tujuan bersama HMPS MI <br>
+2. Meningkatkan kesadaran dan pemahaman seluruh mahasiswa/i mengenai pentingnya peran HMPS dalam mendukung prestasi akademik dan non-akademik melalui sosialisasi yang efektif <br>
+3. Memanfaatkan  platform komunikasi yang efektif bagi mahasiswa/i aktif Program Studi untuk berbagi masukan, ide, dan umpan balik terkait pengembangan HMPS. Platform ini akan memastikan keterlibatan aktif mahasiswa/i dalam menanggapi hal yang terjadi pada lingkungan sekitar pembelajaran mereka.
+</blockquote>
                       </div>
                     </div>
                     <div class="row">
@@ -165,12 +158,38 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-sm-12">
-                        <div class="module-icon"><span class="icon-quote"></span></div>
+                        <h3 class="module-icon">Sejarah</h3>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-8 col-sm-offset-2">
-                        <blockquote class="testimonial-text font-alt">Inovasi Tanpa Batas</blockquote>
+                        <blockquote class="testimonial-text font-alt">HMPS-MI POLMED didirikan pada hari Sabtu tanggal 10 Mei 2008 di
+Gedung UPT Komputer Lantai 3 kampus Politeknik Negeri Medan Jalan
+Almamater No. 1 Medan, untuk waktu yang tidak ditentukan</blockquote>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 col-sm-offset-4">
+                        <div class="testimonial-author">
+                          <div class="testimonial-caption font-alt">
+                            <div class="testimonial-title">HMPS MI</div>
+                            <div class="testimonial-descr">2024/2025</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <h3 class="module-icon">Profil</h3>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-8 col-sm-offset-2">
+                        <blockquote class="testimonial-text font-alt">HMPS-MI POLMED merupakan organisasi kemahasiswaan yang bersifat kekeluargaan dan profesionalitas serta menjunjung tinggi kesetaraan.</blockquote>
                       </div>
                     </div>
                     <div class="row">
@@ -189,142 +208,57 @@
             </div>
           </div>
         </section>
-        <section class="module bg-dark-60" data-background="assets/images/section-6.jpg">
+        <section class="module bg-dark-60" data-background="assets/images/IMG_5388.jpg">
           <div class="container">
             <div class="row">
               <div class="col-sm-12">
                 <div class="video-box">
                   <div class="video-box-icon">
-                    <a class="video-pop-up" href="https://www.youtube.com/watch?v=TTxZj3DZiIM"><span class="icon-video"></span></a>
+                    <a class="video-pop-up" href="assets/images/1109.mp4"><span class="icon-video"></span></a>
                   </div>
-                  <div class="video-title font-alt">Presentation</div>
-                  <div class="video-subtitle font-alt">Watch the video about our new products</div>
+                  <div class="video-title font-alt">OUR TAGLINE</div>
+                  <div class="video-subtitle font-alt">Watch the video</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="module" id="divisi">
+        <section class="module" id="struktur">
           <div class="container">
             <div class="row">
-              <div class="col-sm-12">
-                <h2 class="module-title font-alt">Meet Our Team</h2>
-                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+              <div class="col-sm-12 mb-30">
+                <h2 class="module-title font-alt">Struktur Organisasi</h2>
               </div>
             </div>
           </div>
 
-          <div class="container divisions">
-            <div class="row">
-              <div class="mb-sm-80 wow fadeInUp col-lg-2 col-sm-2 col-md-4" onclick="wow fadeInUp">
+          <div class="container">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+              <div class="mb-sm-80 wow fadeInUp " onclick="wow fadeInUp">
                 <div class="team-item">
                   <div class="team-image">
-                    <img src="assets/images/team-4.jpg" alt="Member Photo" />
+                    <img src="assets/images/struktur.jpg" alt="Member Photo" />
                     <div class="team-detail">
-                      <h5 class="font-alt">Yes, it's me</h5>
-                      <p class="font-serif">Divisi Internal</p>
-                      <div class="team-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
-                      </div>
+                      <h5 class="font-alt">Kabinet Evolutionnaire</h5>
+                      <p class="font-serif">HMPS MI</p>
                     </div>
-                  </div>
-                  <div class="team-descr font-alt">
-                    <div class="team-name">Dylan Woods</div>
-                    <div class="team-role">Developer</div>
-                  </div>
-                </div>
-              </div>
-              <div class="mb-sm-80 wow fadeInUp col-lg-2 col-sm-2 col-md-4" onclick="wow fadeInUp">
-                <div class="team-item">
-                  <div class="team-image">
-                    <img src="assets/images/team-4.jpg" alt="Member Photo" />
-                    <div class="team-detail">
-                      <h5 class="font-alt">Yes, it's me</h5>
-                      <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
-                      <div class="team-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="team-descr font-alt">
-                    <div class="team-name">Dylan Woods</div>
-                    <div class="team-role">Developer</div>
-                  </div>
-                </div>
-              </div>
-              <div class="mb-sm-80 wow fadeInUp col-lg-2 col-sm-2 col-md-4" onclick="wow fadeInUp">
-                <div class="team-item">
-                  <div class="team-image">
-                    <img src="assets/images/team-4.jpg" alt="Member Photo" />
-                    <div class="team-detail">
-                      <h5 class="font-alt">Yes, it's me</h5>
-                      <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
-                      <div class="team-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="team-descr font-alt">
-                    <div class="team-name">Dylan Woods</div>
-                    <div class="team-role">Developer</div>
-                  </div>
-                </div>
-              </div>
-              <div class="mb-sm-80 wow fadeInUp col-lg-2 col-sm-2 col-md-4" onclick="wow fadeInUp">
-                <div class="team-item">
-                  <div class="team-image">
-                    <img src="assets/images/team-4.jpg" alt="Member Photo" />
-                    <div class="team-detail">
-                      <h5 class="font-alt">Yes, it's me</h5>
-                      <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
-                      <div class="team-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="team-descr font-alt">
-                    <div class="team-name">Dylan Woods</div>
-                    <div class="team-role">Developer</div>
-                  </div>
-                </div>
-              </div>
-              <div class="mb-sm-80 wow fadeInUp col-lg-2 col-sm-2 col-md-4" onclick="wow fadeInUp">
-                <div class="team-item">
-                  <div class="team-image">
-                    <img src="assets/images/team-4.jpg" alt="Member Photo" />
-                    <div class="team-detail">
-                      <h5 class="font-alt">Yes, it's me</h5>
-                      <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
-                      <div class="team-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="team-descr font-alt">
-                    <div class="team-name">Dylan Woods</div>
-                    <div class="team-role">Developer</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="module bg-dark-60 pt-0 pb-0 parallax-bg testimonial" data-background="assets/images/DSC02009.jpg">
+        <section class="module bg-dark-60 pt-0 pb-0 parallax-bg testimonial" data-background="assets/images/IMG_7911.jpg">
           <div class="testimonials-slider pt-140 pb-140">
-            <ul class="slides">
+            <ul class="">
               <li>
                 <div class="container">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="module-icon"><span class="icon-quote"></span></div>
-                    </div>
-                  </div>
+
                   <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
                       <blockquote class="testimonial-text font-alt">Berkembang bersama MI, menjadi yang terbaik</blockquote>
                     </div>
                   </div>
-                  <div class="row">
                     <div class="col-sm-4 col-sm-offset-4">
                       <div class="testimonial-author">
                         <div class="testimonial-caption font-alt">
@@ -333,114 +267,37 @@
                         </div>
                       </div>
                     </div>
-                  </div>
                 </div>
               </li>
               <li>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="module-icon"><span class="icon-quote"></span></div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
-                      <blockquote class="testimonial-text font-alt">Kabinet Evolutionnaire</blockquote>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-4 col-sm-offset-4">
-                      <div class="testimonial-author">
-                        <div class="testimonial-caption font-alt">
-                          <div class="testimonial-title">HMPS MI</div>
-                          <div class="testimonial-descr">2024/2025</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="module-icon"><span class="icon-quote"></span></div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
-                      <blockquote class="testimonial-text font-alt">Inovasi Tanpa Batas</blockquote>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-4 col-sm-offset-4">
-                      <div class="testimonial-author">
-                        <div class="testimonial-caption font-alt">
-                          <div class="testimonial-title">HMPS MI</div>
-                          <div class="testimonial-descr">2024/2025</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
             </ul>
           </div>
         </section>
-        <section class="module" id="progja">
+        <section class="module" id="logo-all">
           <div class="container">
-            <div class="row">
-              <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">Latest blog posts</h2>
-                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
-              </div>
-            </div>
             <div class="row multi-columns-row post-columns">
               <div class="col-sm-6 col-md-4 col-lg-4">
                 <div class="post mb-20">
                   <div class="post-thumbnail">
-                    <a href="#"><img src="assets/images/post-1.jpg" alt="Blog-post Thumbnail" /></a>
+                    <a href="#"><img src="assets/images/LOGO PROGRAM STUDI MI.png" alt="Blog-post Thumbnail" /></a>
                   </div>
-                  <div class="post-header font-alt">
-                    <h2 class="post-title"><a href="#">Our trip to the Alps</a></h2>
-                    <div class="post-meta">By&nbsp;<a href="#">Mark Stone</a>&nbsp;| 23 November | 3 Comments</div>
-                  </div>
-                  <div class="post-entry">
-                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                  </div>
-                  <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                 </div>
               </div>
               <div class="col-sm-6 col-md-4 col-lg-4">
                 <div class="post mb-20">
                   <div class="post-thumbnail">
-                    <a href="#"><img src="assets/images/post-2.jpg" alt="Blog-post Thumbnail" /></a>
+                    <a href="#"><img src="assets/images/LOGO POLMED.png" alt="Blog-post Thumbnail" /></a>
                   </div>
-                  <div class="post-header font-alt">
-                    <h2 class="post-title"><a href="#">Shore after the tide</a></h2>
-                    <div class="post-meta">By&nbsp;<a href="#">Andy River</a>&nbsp;| 11 November | 4 Comments</div>
-                  </div>
-                  <div class="post-entry">
-                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                  </div>
-                  <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                 </div>
               </div>
               <div class="col-sm-6 col-md-4 col-lg-4">
                 <div class="post mb-20">
                   <div class="post-thumbnail">
-                    <a href="#"><img src="assets/images/post-3.jpg" alt="Blog-post Thumbnail" /></a>
+                    <a href="#"><img src="assets/images/LOGO KABINET UTAMA.png" alt="Blog-post Thumbnail" /></a>
                   </div>
-                  <div class="post-header font-alt">
-                    <h2 class="post-title"><a href="#">We in New Zealand</a></h2>
-                    <div class="post-meta">By&nbsp;<a href="#">Dylan Woods</a>&nbsp;| 5 November | 15 Comments</div>
-                  </div>
-                  <div class="post-entry">
-                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                  </div>
-                  <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -459,10 +316,11 @@
                   <h3 class="font-alt">Links</h3>
                   <ul class="icon-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#">Realistic Business Card Mockup</a></li>
-                    <li><a href="#">Eco bag Mockup</a></li>
-                    <li><a href="#">Bottle Mockup</a></li>
-                    <li><a href="#">Our trip to the Alps</a></li>
+ <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
+                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
+                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
+                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
+                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
                   </ul>
                 </div>
               </div>
