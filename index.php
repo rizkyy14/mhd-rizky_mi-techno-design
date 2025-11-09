@@ -72,7 +72,7 @@
                   <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
                   <li><a href="#anggota" class="section-scroll">Anggota</a></li>
                   <li><a href="#progja" class="section-scroll">Program Kerja</a></li>
-                  <li><a href="#kontak" class="section-scroll">Kontak</a></li>
+                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
                   <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
                 </ul>
               </li>

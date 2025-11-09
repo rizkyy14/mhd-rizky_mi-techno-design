@@ -73,7 +73,7 @@ if (empty($_SESSION['username'])){
 
               <li class="nav-item"><a href="admin/tambah-divisi.php" target="_blank">Data Divisi</a></li>
               <li class="nav-item"><a href="admin/pengaduan.php" target="_blank">Pengaduan</a></li>
-              <li class="nav-item"><a href="admin/tambah-berita.php" target="_blank">Berita</a></li>
+              <li class="nav-item"><a href="admin/tambah-foto.php" target="_blank">Foto</a></li>
               <li class="nav-item"><a href="aksi_logout.php">Logout</a></li>
             </ul>
           </div>
