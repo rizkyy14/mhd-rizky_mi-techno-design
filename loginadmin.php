@@ -64,25 +64,13 @@
           <!-- MENU -->
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
-                  <li><a href="#dokumentasi" class="section-scroll">Dokumentasi Kegiatan</a></li>
-                  <li><a href="#divisi" class="section-scroll">Divisi</a></li>
-                  <li><a href="#anggota" class="section-scroll">Anggota</a></li>
-                  <li><a href="#progja" class="section-scroll">Program Kerja</a></li>
-                  <li><a href="#kontak" class="section-scroll">Kontak</a></li>
-                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a href="login_register.html">Login Admin</a></li>
+              <li class="nav-item"><a href="index.php">Back</a></li>
             </ul>
           </div>
         </div>
       </nav>
       <div class="main">
-        <section class="module bg-admin bg-dark-30" data-background="assets/images/section-4.jpg">
+        <section class="module bg-admin bg-dark" >
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
@@ -112,7 +100,7 @@
             </div>
           </div>
         </section>
-        <div class="module-small bg-dark" id="bawah">
+        <div class="module-small bg-primary" id="bawah">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-6">
@@ -127,18 +115,18 @@
                   <h3 class="font-alt">Links</h3>
                   <ul class="icon-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#">Realistic Business Card Mockup</a></li>
-                    <li><a href="#">Eco bag Mockup</a></li>
-                    <li><a href="#">Bottle Mockup</a></li>
-                    <li><a href="#">Our trip to the Alps</a></li>
+ <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
+                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
+                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
+                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
+                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <hr class="divider-d" />
-        <footer class="footer bg-dark">
+        <footer class="footer bg-primary">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-12 text-center">

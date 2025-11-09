@@ -69,12 +69,12 @@
         </div>
       </nav>
 <div class="main">
-        <section class="module bg-dark-60 contact-page-header bg-dark" data-background="assets/images/contact_bg.jpg">
+        <section class="module bg-dark-60 contact-page-header bg-primary">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
                 <h2 class="module-title font-alt">LIHAT PENGADUAN</h2>
-                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+                
               </div>
             </div>
           </div>
@@ -84,10 +84,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
-        <h2 class="module-title font-alt" style="text-transform: none;">Latest blog posts</h2>
-        <div class="module-subtitle font-serif" style="text-transform: none;">
-          A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-        </div>
+        <h2 class="module-title font-alt" style="text-transform: none;">PENGADUAN</h2>
       </div>
     </div>
 
@@ -125,7 +122,7 @@
 </section>
 
         
-        <div class="module-small bg-dark" id="bawah">
+        <div class="module-small bg-primary" id="bawah">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-6">
@@ -140,18 +137,18 @@
                   <h3 class="font-alt">Links</h3>
                   <ul class="icon-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#">Realistic Business Card Mockup</a></li>
-                    <li><a href="#">Eco bag Mockup</a></li>
-                    <li><a href="#">Bottle Mockup</a></li>
-                    <li><a href="#">Our trip to the Alps</a></li>
+ <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
+                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
+                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
+                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
+                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <hr class="divider-d" />
-        <footer class="footer bg-dark">
+        <footer class="footer bg-primary">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-12 text-center">

@@ -11,7 +11,7 @@ include 'koneksi.php'
     Document Title
     =============================================
     -->
-    <title>MI TECNO TES</title>
+    <title>Gallery</title>
     <!--  
     Favicons
     =============================================
@@ -68,40 +68,18 @@ include 'koneksi.php'
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
-                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
-                  <li><a href="#dokumentasi" class="section-scroll">Dokumentasi Kegiatan</a></li>
-                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
-                  <li><a href="#anggota" class="section-scroll">Anggota</a></li>
-                  <li><a href="#progja" class="section-scroll">Program Kerja</a></li>
-                  <li><a href="#kontak" class="section-scroll">Kontak</a></li>
-                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
-                </ul>
+                <a class="" href="index.php">Home</a>
               </li>
-              <li class="nav-item"><a href="loginadmin.php" target="_blank">Login Admin</a></li>
-              <li class="nav-item"><a href="tulis-pengaduan.php" target="_blank">Pengaduan</a></li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <section class="home-section home-full-height bg-dark-30" id="home" data-background="assets/images/DSC02009.jpg">
-        <div
-          class="video-player"
-          data-property="{videoURL:'https://www.youtube.com/watch?v=bNucJgetMjE', containment:'.home-section', startAt:18, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"
-        ></div>
-        <div class="video-controls-box">
-          <div class="container">
-            <div class="video-controls"><a class="fa fa-volume-up" id="video-volume" href="#">&nbsp;</a><a class="fa fa-pause" id="video-play" href="#">&nbsp;</a></div>
-          </div>
-        </div>
+      <section class="home-section home-full-height bg-dark-30" id="home" data-background="assets/images/IMG_5388.jpg">
+
         <div class="titan-caption">
           <div class="caption-content">
-            <div class="font-alt mb-10 titan-title-size-1">Kabinet Evolutionnaire</div>
-            <div class="font-alt titan-title-size-4">HMPS</div>
-            <div class="font-alt mb-10 titan-title-size-3">Manajemen Informatika</div>
-            <div class="font-alt mb-30 titan-title-size-1">2024/2025</div>
+            <div class="font-alt mb-10 titan-title-size-3">GALLERY</div>
           </div>
         </div>
       </section>
@@ -109,12 +87,6 @@ include 'koneksi.php'
 
 <section class="module" id="progja">
           <div class="container">
-            <div class="row">
-              <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">Latest blog posts</h2>
-                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
-              </div>
-            </div>
             <div class="row multi-columns-row post-columns">
                  <?php
                $query = mysqli_query($koneksi, "
@@ -160,10 +132,11 @@ include 'koneksi.php'
                   <h3 class="font-alt">Links</h3>
                   <ul class="icon-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#">Realistic Business Card Mockup</a></li>
-                    <li><a href="#">Eco bag Mockup</a></li>
-                    <li><a href="#">Bottle Mockup</a></li>
-                    <li><a href="#">Our trip to the Alps</a></li>
+ <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
+                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
+                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
+                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
+                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
                   </ul>
                 </div>
               </div>

@@ -92,22 +92,13 @@ $infoDivisi = mysqli_fetch_assoc($queryInfoDivisi);
                         ?>
                 </ul>
               </li>
-              <li class="nav-item"><a href="admin-page.php">Back</a></li>
+              <li class="nav-item"><a href="index.php">Back</a></li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <section class="home-section home-full-height bg-dark-30" id="home" data-background="assets/images/DSC02009.jpg">
-        <div
-          class="video-player"
-          data-property="{videoURL:'https://www.youtube.com/watch?v=bNucJgetMjE', containment:'.home-section', startAt:18, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"
-        ></div>
-        <div class="video-controls-box">
-          <div class="container">
-            <div class="video-controls"><a class="fa fa-volume-up" id="video-volume" href="#">&nbsp;</a><a class="fa fa-pause" id="video-play" href="#">&nbsp;</a></div>
-          </div>
-        </div>
+      <section class="home-section home-full-height bg-dark-30" id="home" data-background="assets/images/IMG_5388.jpg">
         <div class="titan-caption">
           <div class="caption-content">
             <?php if ($infoDivisi): ?>
@@ -126,7 +117,7 @@ $infoDivisi = mysqli_fetch_assoc($queryInfoDivisi);
         <section class="module sliding-portfolio">
           <div class="row">
             <div class="col-sm-12">
-              <h2 class="module-title font-alt">Our Solved Cases</h2>
+              <h2 class="module-title font-alt">Anggota</h2>
             </div>
           </div>
         </section>
@@ -205,7 +196,7 @@ $infoDivisi = mysqli_fetch_assoc($queryInfoDivisi);
 
 
           
-        <div class="module-small bg-dark" id="bawah">
+        <div class="module-small bg-primary" id="bawah">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-6">
@@ -220,18 +211,18 @@ $infoDivisi = mysqli_fetch_assoc($queryInfoDivisi);
                   <h3 class="font-alt">Links</h3>
                   <ul class="icon-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#">Realistic Business Card Mockup</a></li>
-                    <li><a href="#">Eco bag Mockup</a></li>
-                    <li><a href="#">Bottle Mockup</a></li>
-                    <li><a href="#">Our trip to the Alps</a></li>
+ <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
+                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
+                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
+                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
+                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <hr class="divider-d" />
-        <footer class="footer bg-dark">
+        <footer class="footer bg-primary">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-12 text-center">
