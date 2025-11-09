@@ -14,7 +14,7 @@ $divisi = mysqli_query($koneksi, "SELECT nama_divisi FROM divisi ORDER BY nama_d
     Document Title
     =============================================
     -->
-    <title>Tambah Divisi</title>
+    <title>Tambah Anggota</title>
     <!--  
     Favicons
     =============================================
@@ -68,18 +68,17 @@ $divisi = mysqli_query($koneksi, "SELECT nama_divisi FROM divisi ORDER BY nama_d
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="nav-item"><a href="../admin-page.php">Home</a></li>
-              <li class="nav-item"><a href="tulis-pengaduan.php">Input Profil</a></li>
+              <li class="nav-item"><a href="tambah-divisi.php">Data Divisi</a></li>
             </ul>
           </div>
         </div>
       </nav>
       <div class="main">
-        <section class="module bg-dark-60 contact-page-header bg-dark" data-background="../assets/images/contact_bg.jpg">
+        <section class="module  contact-page-header bg-dark">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
                 <h2 class="module-title font-alt">INPUT ANGGOTA</h2>
-                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
               </div>
             </div>
           </div>
@@ -87,64 +86,51 @@ $divisi = mysqli_query($koneksi, "SELECT nama_divisi FROM divisi ORDER BY nama_d
         <section class="module">
           <div class="container">
             <div class="row">
-              <div class="col-sm-8">
-                <h4 class="font-alt">Form Pengisian Data Divisi</h4>
+              <div class="col-sm-12">
+                <h4 class="font-alt">Form Pengisian Data Anggota</h4>
                 <br />
                 <form method="post" action="proses-tambah-anggota.php" enctype="multipart/form-data">
- 
+                  
                   <div class="form-group">
                     <label>Divisi</label>
                     <select class="form-control" name="divisi" required>
                       <option value="">-- Pilih Divisi --</option>
                       <?php while ($d = mysqli_fetch_assoc($divisi)): ?>
-                      <option value="<?= htmlspecialchars($d['nama_divisi']) ?>">
-                        <?= htmlspecialchars($d['nama_divisi']) ?>
-                      </option>
+                        <option value="<?= htmlspecialchars($d['nama_divisi']) ?>">
+                          <?= htmlspecialchars($d['nama_divisi']) ?>
+                        </option>
                       <?php endwhile; ?>
                     </select>
                   </div>
 
-
-
-
                   <div id="anggota-wrapper">
                     <div class="anggota-item row" style="margin-bottom: 10px">
-                      <div class="col-md-6">
-                        <input type="text" class="form-control" name="nama_anggota[]" placeholder="Nama Anggota" style="text-transform:none;" required />
+                      <div class="col-md-4">
+                        <input type="text" style="text-transform: none" class="form-control" name="nama_anggota[]" placeholder="Nama Anggota" required />
                       </div>
-                      <div class="col-md-6">
-                        <input type="text" class="form-control" name="jabatan[]" placeholder="Jabatan" style="text-transform:none;" required />
+                      <div class="col-md-4">
+                        <input type="text"style="text-transform: none" class="form-control" name="jabatan[]" placeholder="Jabatan" required />
+                      </div>
+                      <div class="col-md-4">
+                        <input type="file" class="form-control foto-input" name="foto_anggota[]" accept="image/*" required />
+                        <img class="preview-img" style="display:none; margin-top:5px; max-width:100px; border-radius:5px; text-transform:none;">
                       </div>
                     </div>
                   </div>
 
                   <button type="button" class="btn btn-success btn-sm" onclick="tambahAnggota()">+ Tambah Anggota</button>
                   <button type="button" class="btn btn-danger btn-sm" onclick="hapusAnggota()">- Hapus Anggota</button>
-
                   <hr />
-
-                  <!-- Upload Foto Multiple -->
-                  <div class="form-group">
-                    <label>Upload Foto Anggota</label>
-                    <input type="file" class="form-control" name="foto_anggota[]" id="fileInput" accept="image/*" multiple required />
-                  </div>
 
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary btn-round">Simpan</button>
                   </div>
                 </form>
               </div>
-              <div class="col-sm-4">
-                <h4 class="font-alt" style="margin-top: 3rem">Preview Gambar</h4>
-                <hr />
-                <div class="work-item">
-                  <img src="../assets/images/post-1.jpg" id="imagePreview" alt="Blog-post Thumbnail" />
-                </div>
-              </div>
             </div>
           </div>
         </section>
-        <div class="module-small bg-dark" id="bawah">
+        <div class="module-small bg-primary" id="bawah">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-6">
@@ -159,18 +145,18 @@ $divisi = mysqli_query($koneksi, "SELECT nama_divisi FROM divisi ORDER BY nama_d
                   <h3 class="font-alt">Links</h3>
                   <ul class="icon-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#">Realistic Business Card Mockup</a></li>
-                    <li><a href="#">Eco bag Mockup</a></li>
-                    <li><a href="#">Bottle Mockup</a></li>
-                    <li><a href="#">Our trip to the Alps</a></li>
+ <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
+                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
+                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
+                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
+                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <hr class="divider-d" />
-        <footer class="footer bg-dark">
+        <footer class="footer bg-primary">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-12 text-center">
@@ -203,29 +189,55 @@ $divisi = mysqli_query($koneksi, "SELECT nama_divisi FROM divisi ORDER BY nama_d
     <script src="../assets/js/plugins.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/showimage.js"></script>
-    <script>
-  function tambahAnggota() {
-    const wrapper = document.getElementById('anggota-wrapper');
-    const div = document.createElement('div');
-    div.className = 'anggota-item row';
-    div.style.marginBottom = '10px';
-    div.innerHTML = `
-      <div class="col-md-6">
-        <input type="text" class="form-control" name="nama_anggota[]" placeholder="Nama Anggota" style="text-transform:none;" required>
-      </div>
-      <div class="col-md-6">
-        <input type="text" class="form-control" name="jabatan[]" placeholder="Jabatan" style="text-transform:none;" required>
-      </div>`;
-    wrapper.appendChild(div);
-  }
+ <script>
+      // Fungsi nambah anggota baru
+      function tambahAnggota() {
+        const wrapper = document.getElementById('anggota-wrapper');
+        const div = document.createElement('div');
+        div.className = 'anggota-item row';
+        div.style.marginBottom = '10px';
+        div.innerHTML = `
+          <div class="col-md-4">
+            <input type="text" style="text-transform: none" class="form-control" name="nama_anggota[]" placeholder="Nama Anggota" required>
+          </div>
+          <div class="col-md-4">
+            <input type="text" style="text-transform: none" class="form-control" name="jabatan[]" placeholder="Jabatan" required>
+          </div>
+          <div class="col-md-4">
+            <input type="file" style="text-transform: none" class="form-control foto-input" name="foto_anggota[]" accept="image/*" required>
+            <img class="preview-img" style="display:none; margin-top:5px; max-width:100px; border-radius:5px;">
+          </div>`;
+        wrapper.appendChild(div);
+      }
 
-  function hapusAnggota() {
-    const wrapper = document.getElementById('anggota-wrapper');
-    if (wrapper.children.length > 1) {
-      wrapper.removeChild(wrapper.lastElementChild);
-    }
-  }
-</script>
+      // Fungsi hapus anggota terakhir
+      function hapusAnggota() {
+        const wrapper = document.getElementById('anggota-wrapper');
+        if (wrapper.children.length > 1) {
+          wrapper.removeChild(wrapper.lastElementChild);
+        }
+      }
+
+      // Fungsi preview gambar (real-time)
+      document.addEventListener('change', function(e) {
+        if (e.target.classList.contains('foto-input')) {
+          const file = e.target.files[0];
+          const preview = e.target.parentElement.querySelector('.preview-img');
+
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+              preview.src = event.target.result;
+              preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+          } else {
+            preview.src = '';
+            preview.style.display = 'none';
+          }
+        }
+      });
+    </script>
 
   </body>
 </html>

@@ -5,7 +5,7 @@ $tgl = $_POST['tgl_tanggapan'];
 $tanggapan=$_POST['tanggapan'];
 
 $st='selesai';
-//memanggil database
+
 $sql=("insert into tanggapan(id_pengaduan,tgl_tanggapan,tanggapan ) values('$id_pengaduan','$tgl','$tanggapan')");
 $data=("update pengaduan set status='$st' where id_pengaduan='$id_pengaduan' ");
 

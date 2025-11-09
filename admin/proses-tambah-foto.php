@@ -9,7 +9,7 @@ $divisi = $_POST['divisi'];
 $foto = $_FILES['lokasifile']['name'];
 $tmp = $_FILES['lokasifile']['tmp_name'];
 
-// pindahkan file ke folder tujuan
+
 if(move_uploaded_file($tmp, '../foto_kegiatan/'.$foto)){
   $sql = "INSERT INTO foto (judulfoto, deskripsifoto, lokasifile, divisi, tgl_unggah)
           VALUES ('$judulfoto','$deskripsifoto','$foto','$divisi','$tanggalunggah')";

@@ -15,7 +15,7 @@ $data=mysqli_fetch_array($query);
     Document Title
     =============================================
     -->
-    <title>Pengaduan</title>
+    <title>Tanggapan</title>
     <!--  
     Favicons
     =============================================
@@ -51,7 +51,7 @@ $data=mysqli_fetch_array($query);
   </head>
   <html data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     <body>
-      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
@@ -62,12 +62,13 @@ $data=mysqli_fetch_array($query);
             </button>
 
             <!-- LOGO -->
-            <a class="navbar-brand" href="#"> <img src="../assets/images/logo mi putih.png" alt="Logo" class="img-fluid logo-navbar" /> </a>
+            <a class="navbar-brand" href="index.html"> <img src="../assets/images/logo mi putih.png" alt="Logo" class="img-fluid logo-navbar" /> </a>
           </div>
 
           <!-- MENU -->
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
+
               <li class="nav-item"><a href="../admin-page.php">Home</a></li>
 
             </ul>
@@ -76,12 +77,11 @@ $data=mysqli_fetch_array($query);
       </nav>
 
 <div class="main" >
-        <section class="module bg-dark-60 contact-page-header bg-dark" data-background="../assets/images/contact_bg.jpg">
+        <section class="module contact-page-header bg-dark">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
                 <h2 class="module-title font-alt">TANGGAPAN</h2>
-                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@ $data=mysqli_fetch_array($query);
             </div>
           </div>
         </section>
-        <div class="module-small bg-dark" id="bawah">
+        <div class="module-small bg-primary" id="bawah">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-6">
@@ -136,18 +136,18 @@ $data=mysqli_fetch_array($query);
                   <h3 class="font-alt">Links</h3>
                   <ul class="icon-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#">Realistic Business Card Mockup</a></li>
-                    <li><a href="#">Eco bag Mockup</a></li>
-                    <li><a href="#">Bottle Mockup</a></li>
-                    <li><a href="#">Our trip to the Alps</a></li>
+ <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
+                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
+                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
+                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
+                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <hr class="divider-d" />
-        <footer class="footer bg-dark">
+        <footer class="footer bg-primary">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-12 text-center">
