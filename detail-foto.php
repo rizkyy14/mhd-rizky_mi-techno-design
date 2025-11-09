@@ -1,8 +1,17 @@
 <?php
-include 'koneksi.php'
+
+$id=$_GET['id'];
+if(empty($id)){
+	// header("Location:gallery.php");
+}
+include'koneksi.php';
+$query=mysqli_query($koneksi,"SELECT*FROM foto WHERE id_foto='$id'");
+$data=mysqli_fetch_array($query);
+
+
 ?>
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr" style="scroll-behavior: smooth">
+<html lang="en-US" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,7 +20,7 @@ include 'koneksi.php'
     Document Title
     =============================================
     -->
-    <title>MI TECNO TES</title>
+    <title>Detail Foto</title>
     <!--  
     Favicons
     =============================================
@@ -40,17 +49,14 @@ include 'koneksi.php'
     <link href="assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet" />
     <link href="assets/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet" />
     <link href="assets/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/navbar.css" />
     <!-- Main stylesheet and color file-->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/nav2.css" />
     <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet" />
   </head>
   <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     <main>
-      <div class="page-loader">
-        <div class="loader">Loading...</div>
-      </div>
-      <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
@@ -61,91 +67,49 @@ include 'koneksi.php'
             </button>
 
             <!-- LOGO -->
-            <a class="navbar-brand" href="index.html"> <img src="assets/images/logo mi putih.png" alt="Logo" class="img-fluid logo-navbar" /> </a>
+            <a class="navbar-brand" href="#"> <img src="assets/images/logo mi putih.png" alt="Logo" class="img-fluid logo-navbar" /> </a>
           </div>
 
           <!-- MENU -->
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
-                  <li><a href="#dokumentasi" class="section-scroll">Dokumentasi Kegiatan</a></li>
-                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
-                  <li><a href="#anggota" class="section-scroll">Anggota</a></li>
-                  <li><a href="#progja" class="section-scroll">Program Kerja</a></li>
-                  <li><a href="#kontak" class="section-scroll">Kontak</a></li>
-                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a href="loginadmin.php" target="_blank">Login Admin</a></li>
-              <li class="nav-item"><a href="tulis-pengaduan.php" target="_blank">Pengaduan</a></li>
+              <li class="nav-item"><a href="gallery.php">Back</a></li>
             </ul>
           </div>
         </div>
       </nav>
-
-      <section class="home-section home-full-height bg-dark-30" id="home" data-background="assets/images/DSC02009.jpg">
-        <div
-          class="video-player"
-          data-property="{videoURL:'https://www.youtube.com/watch?v=bNucJgetMjE', containment:'.home-section', startAt:18, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"
-        ></div>
-        <div class="video-controls-box">
-          <div class="container">
-            <div class="video-controls"><a class="fa fa-volume-up" id="video-volume" href="#">&nbsp;</a><a class="fa fa-pause" id="video-play" href="#">&nbsp;</a></div>
-          </div>
-        </div>
-        <div class="titan-caption">
-          <div class="caption-content">
-            <div class="font-alt mb-10 titan-title-size-1">Kabinet Evolutionnaire</div>
-            <div class="font-alt titan-title-size-4">HMPS</div>
-            <div class="font-alt mb-10 titan-title-size-3">Manajemen Informatika</div>
-            <div class="font-alt mb-30 titan-title-size-1">2024/2025</div>
-          </div>
-        </div>
-      </section>
-      <div class="main">
-
-<section class="module" id="progja">
+<div class="main">
+        <section class="module bg-dark-60 contact-page-header bg-dark" data-background="assets/images/contact_bg.jpg">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">Latest blog posts</h2>
+                <h2 class="module-title font-alt">DETAIL FOTO</h2>
                 <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
               </div>
             </div>
-            <div class="row multi-columns-row post-columns">
-                 <?php
-               $query = mysqli_query($koneksi, "
-               SELECT foto.*, divisi.nama_divisi 
-             FROM foto 
-               INNER JOIN divisi ON foto.divisi = divisi.nama_divisi
-             ORDER BY foto.tgl_unggah DESC
-              ");
-
-                while($data = mysqli_fetch_array($query)){
-                  ?>
+          </div>
+        </section>
+        
+        <section class="module">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-8 col-lg-8"><img src="foto_kegiatan/<?=$data['lokasifile']?>" alt="Title of Image" /></div>
               <div class="col-sm-6 col-md-4 col-lg-4">
-                <div class="post mb-20">
-                  <div class="post-thumbnail">
-                    <img src="foto_kegiatan/<?php echo $data['lokasifile']; ?>" alt="<?php echo $data['judulfoto']; ?>" />
-                  </div>
-                  <div class="post-header font-alt">
-                    <h4 class="post-title"><?php echo $data['judulfoto']; ?></h4>
-                    <div class="post-meta"><?php echo $data['tgl_unggah']; ?></div>
-                  </div>
-                  <div class="post-entry">
-                  </div>
-                  <div class="post-more"><a class="more-link" href="detail-foto.php?id=<?php echo $data['id_foto']; ?>">Read more</a></div>
+                <div class="work-details">
+                  <h5 class="work-details-title font-alt"><?=$data['judulfoto']?></h5>
+                  <p><?=$data['deskripsifoto']?></p>
+                  <ul>
+                    <li>
+                      <span><a href="gallery.php"><strong>Kembali</strong></a></span>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <?php } ?>
             </div>
           </div>
         </section>
-
-        <div class="module-small bg-primary" id="bawah">
+        
+        <div class="module-small bg-dark" id="bawah">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-6">
@@ -170,7 +134,8 @@ include 'koneksi.php'
             </div>
           </div>
         </div>
-        <footer class="footer bg-primary">
+        <hr class="divider-d" />
+        <footer class="footer bg-dark">
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-12 text-center">
@@ -183,12 +148,7 @@ include 'koneksi.php'
       <div class="scroll-up">
         <a href="#totop"><i class="fa fa-angle-double-up"></i></a>
       </div>
-    </main>
-    <!--  
-    JavaScripts
-    =============================================
-    -->
-    <script src="assets/lib/jquery/dist/jquery.js"></script>
+      <script src="assets/lib/jquery/dist/jquery.js"></script>
     <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/lib/wow/dist/wow.js"></script>
     <script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
@@ -199,7 +159,8 @@ include 'koneksi.php'
     <script src="assets/lib/smoothscroll.js"></script>
     <script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
     <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
-  </body>
+      </body>
 </html>
