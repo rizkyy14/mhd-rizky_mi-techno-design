@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION['username'])){
+  echo"<script>alert('maaf anda belum login');window.location='index.php';</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr" style="scroll-behavior: smooth">
   <head>
@@ -67,6 +73,7 @@
 
               <li class="nav-item"><a href="admin/tambah-divisi.php" target="_blank">Data Divisi</a></li>
               <li class="nav-item"><a href="admin/pengaduan.php" target="_blank">Pengaduan</a></li>
+              <li class="nav-item"><a href="admin/tambah-berita.php" target="_blank">Berita</a></li>
               <li class="nav-item"><a href="aksi_logout.php">Logout</a></li>
             </ul>
           </div>
@@ -96,112 +103,19 @@
         <section class="module">
           <div class="container">
             <div class="row">
-              <div class="col-sm-8">
-                <h4 class="font-alt">Pengisian data profil</h4>
-                <br />
-                <form id="contactForm" role="form" method="post" action="proses-profil.php">
-                  <div class="form-group"> <label for="nama_kabinet">Nama Kabinet</label> <input class="form-control" type="text" id="nama_kabinet" name="nama_kabinet" required /> 
-                </div>
-
-                <div class="form-group"> <label for="periode">Periode</label> <input class="form-control" type="text" id="periode" name="periode" placeholder="Contoh: 2024/2025" required /> </div> 
-                
-                <div class="form-group"> <label for="gambar_header">Gambar Header</label> <input type="file" class="form-control" id="gambar_header" name="gambar_header" required /> </div> 
-                
-                <div class="form-group"> <label for="gambar_tengah">Gambar Tengah</label> <input type="file" class="form-control" id="gambar_tengah" name="gambar_tengah" required /> </div> 
-                
-                <div class="form-group"> <label for="profil">Profil</label> <textarea class="form-control" id="profil" name="profil" rows="4" required></textarea> </div> 
-                
-                <div class="form-group"> <label>Motto 1</label> <input class="form-control" type="text" name="motto1" required /> </div> 
-                
-                <div class="form-group"> <label>Motto 2</label> <input class="form-control" type="text" name="motto2" required /> </div> 
-                
-                <div class="form-group"> <label>Motto 3</label> <input class="form-control" type="text" name="motto3" required /> </div> 
-                
-                <div class="form-group"> <label for="sejarah">Sejarah</label> <textarea class="form-control" id="sejarah" name="sejarah" rows="4" required></textarea> </div> 
-                
-                <div class="form-group"> <label for="visi">Visi</label> <textarea class="form-control" id="visi" name="visi" rows="2" required></textarea> </div> 
-                
-                <div class="form-group"> <label for="misi">Misi</label> <textarea class="form-control" id="misi" name="misi" rows="2" required></textarea> </div> 
-                
-                <div class="text-center"> <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">Submit</button> </div> </form> <div class="ajax-response font-alt" id="contactFormResponse"></div> </div> 
-                
-                <div class="col-sm-4"> <h4 class="font-alt" style="margin-top: 3rem">Preview Gambar</h4> <hr /> 
-                
-                <div class="work-item"> 
-                <img id="previewHeader" src="assets/images/post-1.jpg" alt="Header Preview" style="width:100%; margin-bottom:10px;" /> 
-                <img id="previewTengah" src="assets/images/post-1.jpg" alt="Tengah Preview" style="width:100%;" /> </div> 
+              <div class="col-sm-12 text-center">
+                <h1 class="font-alt">Welcome!</h1>
+                <h3 class="font-alt">Selamat datang di laman Content Management System (CMS) HMPS MI </h3>
+                <h3 class="font-alt">Anda Login Sebagai : <?= $_SESSION['username']?> </h3>
+                <h3 class="font-alt">Silahkan akses menu input data melalui navigation bar yang telah tersedia</h3>
+                <h2 class="font-alt">Terima kasih...</h2>
               </div> 
             </div>
             </div>
           </div>
         </section>
         
-         <section class="module" id="inputanggota">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-8">
-                <h4 class="font-alt">Data Anggota</h4>
-                <br />
-                <form id="contactForm" role="form" method="post" action="proses-profil.php">
-                  <div class="form-group"> <label for="nama_anggota">Nama Anggota</label> <input class="form-control" type="text" id="nama_anggota" name="nama_anggota" required /> 
-                </div>
-                  <div class="form-group"> <label for="nim">Nim</label> <input class="form-control" type="text" id="nim" name="nim" required /> 
-                </div>
 
-                <div class="form-group"> <label for="divisi">Divisi</label> <input class="form-control" type="text" id="divisi" name="divisi"  required /> </div> 
-
-                <div class="form-group"> <label for="jabatan">Jabatan</label> <input class="form-control" type="text" id="jabatan" name="jabatan"  required /> </div> 
-                
-                <div class="form-group"> <label for="foto_anggota">Foto Anggota</label> <input type="file" class="form-control" id="gambar_header" name="gambar_header" required /> </div> 
-                
-                <div class="text-center"> <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">Submit</button> </div> </form> <div class="ajax-response font-alt" id="contactFormResponse"></div> </div> 
-                
-                <div class="col-sm-4"> <h4 class="font-alt" style="margin-top: 3rem">Preview Gambar</h4> <hr /> 
-                
-                <div class="work-item"> 
-                <img id="previewHeader" src="assets/images/post-1.jpg" alt="Header Preview" style="width:100%; margin-bottom:10px;" /> 
-                <img id="previewTengah" src="assets/images/post-1.jpg" alt="Tengah Preview" style="width:100%;" /> </div> 
-              </div> 
-            </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="module" id="progja">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">Latest blog posts</h2>
-                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
-              </div>
-            </div>
-            <div class="row multi-columns-row post-columns">
-
-              <div class="col-sm-6 col-md-4 col-lg-4">
-                <div class="post mb-20">
-                  <div class="post-thumbnail">
-                    <a href="#"><img src="assets/images/post-3.jpg" alt="Blog-post Thumbnail" /></a>
-                  </div>
-                  <div class="post-header font-alt">
-                    <h2 class="post-title"><a href="#">We in New Zealand</a></h2>
-                    <div class="post-meta">By&nbsp;<a href="#">Dylan Woods</a>&nbsp;| 5 November | 15 Comments</div>
-                  </div>
-                  <div class="post-entry">
-                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                  </div>
-                  <div class="post-more">
-                    <h4>
-                      <a href="?url=detail-pengaduan&id=<?=$data['id_pengaduan'] ?>">Detail</a>
-                    </h4>
-                    <h4>
-                      <a href="?url=admin/tulis-tanggapan&id=<?=$data['id_pengaduan'] ?>">Tanggapi</a>
-                    </h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
         <div class="module-small bg-dark" id="bawah">
           <div class="container-fluid">
             <div class="row">

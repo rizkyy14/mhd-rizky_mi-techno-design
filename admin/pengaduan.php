@@ -44,7 +44,7 @@
   </head>
   <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     <main>
-      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
@@ -55,12 +55,13 @@
             </button>
 
             <!-- LOGO -->
-            <a class="navbar-brand" href="#"> <img src="../assets/images/logo mi putih.png" alt="Logo" class="img-fluid logo-navbar" /> </a>
+            <a class="navbar-brand" href="index.html"> <img src="../assets/images/logo mi putih.png" alt="Logo" class="img-fluid logo-navbar" /> </a>
           </div>
 
           <!-- MENU -->
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
+
               <li class="nav-item"><a href="../admin-page.php">Home</a></li>
 
             </ul>

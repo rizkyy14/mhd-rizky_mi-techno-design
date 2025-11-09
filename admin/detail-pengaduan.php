@@ -47,33 +47,12 @@ $data=mysqli_fetch_array($query);
     <!-- Main stylesheet and color file-->
     <link href="../assets/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/nav2.css" />
+    <link rel="stylesheet" href="../assets/css/navbar.css" />
     <link id="color-scheme" href="../assets/css/colors/default.css" rel="stylesheet" />
   </head>
   <html data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     <body>
-      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <!-- LOGO -->
-            <a class="navbar-brand" href="#"> <img src="../assets/images/logo mi putih.png" alt="Logo" class="img-fluid logo-navbar" /> </a>
-          </div>
-
-          <!-- MENU -->
-          <div class="collapse navbar-collapse" id="custom-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="nav-item"><a href="../admin-page.php">Home</a></li>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
+      
 <div class="main">
         <section class="module bg-dark-60 contact-page-header bg-dark" data-background="assets/images/contact_bg.jpg">
           <div class="container">

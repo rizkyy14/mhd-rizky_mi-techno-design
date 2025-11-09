@@ -92,7 +92,7 @@ $infoDivisi = mysqli_fetch_assoc($queryInfoDivisi);
                         ?>
                 </ul>
               </li>
-              <li class="nav-item"><a href="index.html">Back</a></li>
+              <li class="nav-item"><a href="admin-page.php">Back</a></li>
             </ul>
           </div>
         </div>
