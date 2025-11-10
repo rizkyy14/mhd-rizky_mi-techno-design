@@ -144,12 +144,9 @@ $divisi = mysqli_query($koneksi, "SELECT nama_divisi FROM divisi ORDER BY nama_d
                 <div class="widget">
                   <h3 class="font-alt">Links</h3>
                   <ul class="icon-list">
-                    <li><a href="#home">Home</a></li>
- <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
-                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
-                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
-                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
-                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
+                    <li><a href="../admin-page.php">Home</a></li>
+                    <li><a href="tambah-divisi.php">Data Divisi</a></li>
+
                   </ul>
                 </div>
               </div>

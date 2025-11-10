@@ -84,7 +84,7 @@ $infoDivisi = mysqli_fetch_assoc($queryInfoDivisi);
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">Divisi</a>
                 <ul class="dropdown-menu">
                   <?php
-                        $allDivisi = mysqli_query($koneksi, "SELECT * FROM divisi ORDER BY nama_divisi ASC");
+                        $allDivisi = mysqli_query($koneksi, "SELECT * FROM divisi ORDER BY nama_divisi");
                         while ($d = mysqli_fetch_assoc($allDivisi)) {
                             $namaLink = urlencode($d['nama_divisi']);
                             echo '<li><a href="divisi.php?nama='.$namaLink.'">'.$d['nama_divisi'].'</a></li>';
@@ -210,12 +210,7 @@ $infoDivisi = mysqli_fetch_assoc($queryInfoDivisi);
                 <div class="widget">
                   <h3 class="font-alt">Links</h3>
                   <ul class="icon-list">
-                    <li><a href="#home">Home</a></li>
- <li><a href="#about" class="section-scroll">Tentang Kami</a></li>
-                  <li><a href="divisi.php?nama=BPH+%28Badan+Pengurus+Harian%29" target="_blank" class="section-scroll">Divisi</a></li>
-                  <li><a href="#struktur" class="section-scroll">Struktur Organisasi</a></li>
-                  <li><a href="gallery.php" class="section-scroll">Gallery</a></li>
-                  <li><a href="https://www.instagram.com/mipolmed/" target="_blank">Instagram</a></li>
+                    <li><a href="index.php">Home</a></li>
                   </ul>
                 </div>
               </div>
