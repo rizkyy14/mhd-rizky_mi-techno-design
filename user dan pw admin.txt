@@ -1,0 +1,4 @@
+admin username : adm-kii
+password : 123
+
+"mohon maaf apabila terjadi salah pengetikan nama pada bagian anggota, dan mohon maaf sekiranya da anggota yang belum dimasukkan ke web"
